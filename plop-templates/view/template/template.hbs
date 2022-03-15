@@ -1,0 +1,31 @@
+{{#if template}}
+<template>
+	<div class="{{lowerCase name}}">
+		{{ properCase name }}
+	</div>
+</template>
+{{/if}}
+
+{{#if script}}
+<script lang="ts">
+import { reactive, toRefs, defineComponent } from 'vue';
+export default defineComponent({
+	name: '{{ properCase name }}',
+	setup() {
+		const state = reactive({});
+
+		return {
+			...toRefs(state),
+		};
+	},
+});
+</script>
+{{/if}}
+
+{{#if style}}
+<style lang="scss" scoped>
+.{{lowerCase name}} {
+  width:auto;
+}
+</style>
+{{/if}}
